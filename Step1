@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teo's shop</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body{
+			font-family: 'ZCOOL XiaoWei', serif;
+			font-size: 20px;
+			text-indent: 20px;
+		}
+
+		header{
+			color:	#A52A2A;
+			text-align: center;
+			font-size: 2em;	
+		}	
+
+		nav{
+			position: sticky;
+			top: 0px;
+			color: white;
+			z-index:3;
+			width: 100%;
+		}
+
+		figcaption,#btn1,h1{
+			text-align: center;
+		}
+
+		p,span,label{
+			text-align: justify;
+			text-indent: 30px;
+			padding: 10px;
+		}
+
+		.flex-container{
+			font-size: 0.85em;
+			justify-content: center;
+			background-color: black;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-content: space-between;
+		}
+
+		.flex-item{
+			padding: 10px;
+			margin: 10px;
+			display: flex;
+			flex-wrap: nowrap;
+			flex-direction: column;
+			align-content: space-between;
+		}
+
+		.flex-item:hover .content{
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			text-decoration: none;
+		}
+
+		.content{
+			display: none;
+
+		}
+
+		nav>ul>li>ul>li{
+			text-decoration: underline;
+			list-style-type: none;
+		}
+
+		a:link{
+			text-decoration: none;
+		}
+		a:visited{
+			color:green;
+			text-decoration: none;
+		}
+		.gallery{
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			flex-direction: row;
+		}
+		.item{
+			align-content: space-around;
+			flex-shrink: 2;
+		}
+		img{
+			width: 280px;
+			height: 430px;
+			position: relative;
+			left:2px;	
+		}
+		.img{
+			
+			position: relative;
+			left: 40%;
+		}
+		.container{
+			background-color: black;
+			padding: 10px;
+			justify-content: center;
+		}
+		h1,.carousel-caption{
+			color: #A52A2A;
+			text-align: center;
+		}
+
+	</style>
+	<script type="text/javascript">
+		window.onload=function()
+		{
+			//var p=prompt("Varsta dumneavoastra:", 21);
+			var g=document.getElementsByClassName("gallery")[0];
+			for(var i=0;i<g.children.length;i++)
+			{
+					g.children[i].children[2].style.border="2px solid orange";
+					g.children[i].children[2].style.borderRadius="5px";
+					g.children[i].children[2].style.backgroundColor="white";
+					g.children[i].children[2].style.position="relative";
+					g.children[i].children[2].style.left="150px";
+			}
+			
+			document.getElementById("btn1").onclick=function()
+			{	functiebuton1(document.getElementById("pic1"),document.getElementById("paltoane"),"Mantou lung confecționat din pluș, cu revere crestate înguste, cu închizătoare cu capse ascunse în față și cu buzunare în cusăturile laterale. Căptușit."); }
+
+			document.getElementById("btn2").onclick=function()
+			{	functiebuton1(document.getElementById("pic2"),document.getElementById("paltoane2"),"O jachetă eleagantă care se remarcă prin nasturii aurii din dotare. Model prevăzut cu buzunare şic aplicate în faţă şi cu o lungime de cca. 72 cm la măr. 38."); }
+
+			document.getElementById("btn3").onclick=function()
+			{	functiebuton1(document.getElementById("pic3"),document.getElementById("paltoane3"),"Un model modern fără sistem de închidere. Material superior: 90% poliester, 10% viscoză; Căptuşeală: 100% poliester"); }
+
+			document.getElementById("btn4").onclick=function()
+			{	functiebuton1(document.getElementById("pic4"),document.getElementById("paltoane4"),"Un item elegant cu cordon şic în talie, bureţi pentru umeri, buzunare de acces, bentiţe de efect pe umeri şi plătcuţă aplicată pe spate. "); }
+
+			document.getElementById("btn5").onclick=function()
+			{	functiebuton1(document.getElementById("jac1"),document.getElementById("jacheta"),"Un model modern fara sistem de inchidere. Material superior: 90% poliester, 10% viscoză; Căptuşeală: 100% poliester"); }
+
+			document.getElementById("btn6").onclick=function()
+			{	functiebuton1(document.getElementById("jac2"),document.getElementById("jacheta2"),"Un model modern fără sistem de închidere. Material superior: 90% poliester, 10% viscoză; Căptuşeală: 100% poliester"); }
+
+			document.getElementById("btn8").onclick=function()
+			{	functiebuton1(document.getElementById("pul1"),document.getElementById("pulovere"),"Un model modern fără sistem de închidere. Material superior: 90% poliester, 10% viscoză; Căptuşeală: 100% poliester"); }
+
+			document.getElementById("btn6").onclick=function()
+			{	functiebuton1(document.getElementById("jac2"),document.getElementById("jacheta2"),"Un model modern fără sistem de închidere. Material superior: 90% poliester, 10% viscoză; Căptuşeală: 100% poliester"); }
+		}
+		function functiebuton1(s,palt,description)
+		{
+				var p1=document.createElement("p");
+				var p2=document.createElement("p");
+				var p3=document.createElement("span");
+				var p4=document.createElement("select");
+				var p5=document.createElement("span");
+				var p6=document.createElement("select");
+				var p7=document.createElement("br");
+				var p8=document.createElement("label");
+
+				var t1=document.createTextNode("Pret: 299,99LEI");
+				var t2=document.createTextNode(description);
+				var t3=document.createTextNode("Selectati Marimea: ");
+				var continut=['<option value="xs">XS</option>','<option value="s">S</option>','<option value="m">M</option>','<option value="l">L</option>','<option value="xl">XL</option>'];
+				/*var t4="<option>XS</option><option value='s'>S</option> <option value='m'>M</option> <option value='l'>L</option> <option value='audi'>XL</option><br>";*/
+
+				var t5=document.createTextNode("Selectati Culoarea: ");
+				var t6="<option value='negru'>Negru</option> <option value='bej'>Bej</option>";
+				var t8=['Introduceti e-mail: <input type="email" name="email" value="ion.pop@yahoo.com">' , '<input type="button" value="Send">'];
+
+
+				s.style.float="left";
+				p1.appendChild(t1);
+				p2.appendChild(t2);
+				p3.appendChild(t3);
+				p5.appendChild(t5);
+				
+				palt.appendChild(p1);
+				palt.appendChild(p2);
+				palt.appendChild(p3);
+				p4.innerHTML+=continut.join();  
+				p6.innerHTML+=t6; 
+				p8.innerHTML+=t8.join();
+
+				palt.appendChild(p4);
+				palt.appendChild(p7);
+				palt.appendChild(p5);
+				palt.appendChild(p6);
+				palt.appendChild(p7);
+				palt.appendChild(p8);
+				var m=document.createTextNode("Detalii produs selectat:");
+				
+				palt.replaceChild(m,document.getElementById(palt.children[2].getAttribute("id")));
+				palt.children[2].setAttribute("class","butoane");
+
+				//alert(palt.children[2].getAttribute("class"));
+		}
+		
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
+</head>
+<body>
+	<header>Teo's Store</header>
+	<nav> 
+		<ul class="flex-container">
+			<li class="flex-item">FEMEI 
+				<ul class="content">
+					<li><a href="#paltoane">Paltoane</a></li>
+					<li><a href="#jacheta">Jachete</a></li>
+					<li><a href="#pulovere">Pulovere</a></li>
+					<li><a href="#rochii">Rochii</a></li>
+					<li><a href="#blugi">Blugi</a></li>
+					<li><a href="#fuste">Fuste</a></li>
+				</ul>
+			</li>	
+			<li class="flex-item">BARBATI
+				<ul class="content">
+					<li>Sacouri</li>
+					<li>Camasi</li>
+				</ul>
+			</li>
+			<li class="flex-item">COPII
+				<ul class="content">
+					<li>Bebelusi</li>
+					<li>Fete</li>
+					<li>Baieti</li>
+				</ul>
+			</li>
+			<li class="flex-item">HOME
+				<ul class="content">
+					<li>Asternuturi</li>
+					<li>Prosoape</li>
+					<li>Lampi</li>
+				</ul>
+			</li>
+			<li class="flex-item">PROMOTII</li> 
+		</ul>
+	</nav>
+<br>
+	<section class="gallery">
+			<figure class="item" id="paltoane">
+				<img src="https://lp2.hm.com/hmgoepprod?set=source[/46/72/4672e2cac0455388adf3fd332c52d2582110d238.jpg],origin[dam],category[],type[LOOKBOOK],res[s],hmver[1]&call=url[file:/product/main]" alt="palton" id="pic1">
+				<figcaption>Mantou lung plus</figcaption>
+				<input type="button" value="Detalii" id="btn1">
+			</figure>
+			<figure class="item" id="paltoane2">
+				<img src="https://pix.bonprix.pl/imgc/0/0/1/7/1/8/9/1/5/2/_640/17189152/jacheta-cu-nasturi-aurii.jpg" alt="pardesiu" id="pic2">
+				<figcaption>Pardesiu cu nasturi</figcaption>
+				<input type="button" value="Detalii" id="btn2">
+			</figure>
+			<figure class="item" id="paltoane3">
+				<img src="https://pix.bonprix.pl/imgc/0/0/1/8/2/7/1/6/9/7/_640/18271697/mantou.jpg" alt="pardesiu" id="pic3">
+				<figcaption>Pardesiu cu cordon</figcaption>
+				<input type="button" value="Detalii" id="btn3">
+			</figure>
+			<figure class="item" id="paltoane4">
+				<img src="https://pix.bonprix.pl/imgc/0/0/1/7/2/3/8/9/1/0/_640/17238910/mantou.jpg" alt="pardesiu" id="pic4">
+				<figcaption>Mantou Bodyflirt</figcaption>
+				<input type="button" value="Detalii" id="btn4">
+			</figure>
+
+			<figure class="item" id="jacheta">
+				<img src="https://lp2.hm.com/hmgoepprod?set=source[/8e/9d/8e9d8535201a446cc4900d8ea278d3a6b2b610c2.jpg],origin[dam],category[ladies_jacketscoats_jackets],type[LOOKBOOK],res[s],hmver[1]&call=url[file:/product/main]" alt="jacheta" id="jac1">
+				<figcaption>Jacheta vatuita</figcaption>
+				<input type="button" value="Detalii" id="btn5">
+			</figure>
+			<figure class="item" id="jacheta2">
+				<img src="https://lp2.hm.com/hmgoepprod?set=source[/c3/f6/c3f620d4fd6ab3b8a0606ea37f3c2a2b72b1a404.jpg],origin[dam],category[ladies_jacketscoats_jackets],type[LOOKBOOK],res[s],hmver[1]&call=url[file:/product/main]" alt="jacheta" id="jac2">
+				<figcaption>Jacheta de blana artificiala</figcaption>
+				<input type="button" value="Detalii" id="btn6">
+			</figure>
+			<figure class="item" id="jacheta3">
+			<img src="https://static.bershka.net/4/photos2/2019/V/0/1/p/1341/109/800/1341109800_1_1_3.jpg?t=15507526849701" alt="jacheta" id="jac3">
+			<figcaption>Jacheta de motociclist</figcaption>
+			<input type="button" value="Detalii">
+			</figure>
+			<figure class="item" id="pulovere">
+				<img src="https://lp2.hm.com/hmgoepprod?set=source[/71/42/71420a142a2bef70e453db4ad92763e47f5592ea.jpg],origin[dam],category[ladies_knitwear_jumpers],type[LOOKBOOK],res[s],hmver[1]&call=url[file:/product/main]" alt="pulovere" id="pul1">
+				<figcaption>Pulover</figcaption>
+				<input type="button" value="Detalii" id="btn8">
+			</figure>
+			<figure class="item" id="pulovere2">
+			<img src="https://lp2.hm.com/hmgoepprod?set=source[/81/0a/810a789192abee91ad2b3162ef87e6c7e636504d.jpg],origin[dam],category[ladies_hoodiesswetshirts_sweatshirts],type[LOOKBOOK],res[m],res[s],hmver[1]&call=url[file:/product/main]" alt="pulover" id="pul2">
+			<figcaption>Pulover de molton cu broderie</figcaption>
+			<input type="button" value="Detalii">
+			</figure>	
+			<figure class="item">
+			<img src="https://lp2.hm.com/hmgoepprod?set=source[/7f/92/7f92ea43590c1a2f7410f2dd2a4cb86d4e26d75d.jpg],origin[dam],category[ladies_dresses_bodycon],type[LOOKBOOK],res[m],res[s],hmver[1]&call=url[file:/product/main]" alt="rochie">
+			<figcaption>Rochie de jerseu cu guler</figcaption>
+			<input type="button" value="Detalii">
+			</figure>	
+	</section>
+
+<div class="container">
+	<h1>Promotii luna decembrie</h1>
+	<div id="myCarousel" class="carousel slide"  data-ride="carousel">
+    <div class="carousel-inner">
+	      <div class="item">
+	        <img src="https://lp2.hm.com/hmgoepprod?set=source[/7f/92/7f92ea43590c1a2f7410f2dd2a4cb86d4e26d75d.jpg],origin[dam],category[ladies_dresses_bodycon],type[LOOKBOOK],res[m],res[s],hmver[1]&call=url[file:/product/main]" alt="primavara" class="img">
+	        <p class="carousel-caption">Rochie de jerseu</p>
+	      </div>
+
+	      <div class="item active">
+	        <img src="https://lp2.hm.com/hmgoepprod?set=source[/55/bd/55bd9756e77f481c5aa709f87d4d79aba7ed4720.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],res[s],hmver[1]&call=url[file:/product/main]" alt="vara" class="img">
+	        <p class="carousel-caption">Salopeta cu motiv bebelusi</p>
+	      </div>
+   
+	     <div class="item">
+	        <img src="https://lp2.hm.com/hmgoepprod?set=source[/57/e5/57e542b5cc80f85716a163874c78aa466f683b3b.jpg],origin[dam],category[men_jacketscoats_jackets],type[LOOKBOOK],res[s],hmver[1]&call=url[file:/product/main]" alt="toamna" class="img">
+	        <p class="carousel-caption">Jacheata de denim cu plus</p>
+	      </div>
+
+	    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+	      <span class="glyphicon glyphicon-chevron-left"></span>
+	      <span class="sr-only">Previous</span> 
+	    </a>
+	    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+	      <span class="glyphicon glyphicon-chevron-right"></span>
+	      <span class="sr-only">Next</span>
+	    </a>
+  </div></div></div>
+  <form action="mailto:teo.tem06@yahoo.com" method="post" id="myform">
+  		<p>Daca nu aveti cont de utilizator, va puteti face unul acum</p>
+		<label>Nume: <input type="text" name="client" value="Popescu" size="30px"></label><br>
+		<label>Prenume: <input type="text" name="client2" value="Marian" size="30px"></label><br>
+		<label>Varsta:<input type="number" min="14" max="70" name="numar" size="30px" value="20"></label><br>
+		<label> Data nasterii:  <input type="date" name="data" size="30px"></label><br>
+		<label>  Email:   <input type="email" name="adresa" value="popescu.marius@yahoo.com" size="30px" required multiple></label><br>
+		<label>Parola:   <input type="password" name="parola" maxlength="20" size="30px"></label><br>
+		<label>Oras de provenienta:
+		<select name="oras"> 
+			<option value="bucuresti">Bucuresti</option>
+			<option value="bacau">Bacau</option>
+			<option value="buzau">Buzau</option>
+			<option value="braila">Braila</option>
+			<option value="cluj">Cluj</option>
+			<option value="ct">Constanta</option>
+			<option value="ploiesti">Ploiesti</option>
+			<option value="timisoara">Timisoara</option>
+		</select></label><br>
+		<label><textarea name="comments" rows="5" cols="20"> Informatii suplimentare</textarea></label>
+		<input id="sub" type="submit" value="Creaza cont"> 
+		</form>
+</body>
+</html>
